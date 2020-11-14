@@ -61,7 +61,7 @@ async def on_message(message):
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
         elif '엄준식' in message_contant:
-            await message.channel.send("엄마가 준비한 식사")
+            await message.channel.send("준식이 놀리지 마셈.ㅅㄱ")
             
         elif 'wol-desktop' in message_contant:
             os.system("wakeonlan BC:5F:F4:5C:85:B9")
