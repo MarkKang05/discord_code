@@ -6,6 +6,7 @@ import random
 from discord.ext import commands
 import time
 import random
+import os
 
 
 #client = discord.Client()
@@ -59,9 +60,12 @@ async def on_message(message):
                 author = str(message.author)
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
+            
+        elif 'wol-desktop' in message_contant:
+            os.system("wakeonlan BC:5F:F4:5C:85:B9")
 
         else:
-            else_msg = ['말을 끝까지하세요^^','에?','?']
+            else_msg = ['저는 AI 봇이 아니니까 시리한테나 말거세요.','에?','?']
             random_value = random.randrange(0,len(else_msg))
             await message.channel.send('{}'.format(else_msg[random_value]))
         
