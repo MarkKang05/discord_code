@@ -60,10 +60,15 @@ async def on_message(message):
                 author = str(message.author)
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
+<<<<<<< HEAD
         elif '온도' in message_contant:
     
             output = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
             await message.channel.send('{}'.format(output/1000))
+=======
+        elif '엄준식' in message_contant:
+            await message.channel.send("준식이 놀리지 마셈.ㅅㄱ")
+>>>>>>> e52faf0f79ff7d0c26f7fa5aa675573f56962b77
             
         elif 'wol-desktop' in message_contant:
             os.system("wakeonlan BC:5F:F4:5C:85:B9")
