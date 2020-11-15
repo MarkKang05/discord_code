@@ -61,9 +61,10 @@ async def on_message(message):
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
         elif '온도' in message_contant:
-            output = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
-            await message.channel.send('{}'.format(output/1000))
-            
+            cpu_temp = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
+            gpu_temp = int(os.popen('/opt/vc/bin/vcgencmd measure_temp').read())
+            await message.channel.send('CPU:{}°C\nGPU:{}°C'.format(cpu_temp/1000,gpu_temp/1000))
+
         elif '엄준식' in message_contant:
             await message.channel.send("준식이 놀리지 마셈.ㅅㄱ")
             
