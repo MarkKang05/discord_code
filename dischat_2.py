@@ -7,7 +7,10 @@ from discord.ext import commands
 import time
 import random
 import os
-
+from bs4 import BeautifulSoup
+from pprint import pprint
+import requests
+import re
 
 #client = discord.Client()
 bad = ['민트','민초','민트초코','mint','mincho','mint cho'] 
@@ -60,6 +63,15 @@ async def on_message(message):
                 author = str(message.author)
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
+
+        elif '코로나' in message_contant:
+            html = requests.get('http://ncov.mohw.go.kr/')
+            soup = BeautifulSoup(html.text, 'html.parser')
+            cor = soup.find('span',{'class': 'before'}).text
+            del soup
+            cor = re.findall("\d+",cor)
+            await message.channel.send('{}명'.format(cor[0]))
+            #print(cor[0])
         elif '온도' in message_contant:
             cpu_temp = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
             gpu_temp = str(os.popen('/opt/vc/bin/vcgencmd measure_temp').read())
