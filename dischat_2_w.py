@@ -78,7 +78,7 @@ async def on_message(message):
             cor = soup.find('span',{'class': 'before'}).text
             del soup
             cor = re.findall("\d+",cor)
-            await message.channel.send('{}명'.format(cor[0]))
+            await message.channel.send('전일대비 {}명 늘었습니다'.format(cor[0]))
             #print(cor[0])
         elif '온도' in message_contant:
             cpu_temp = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
