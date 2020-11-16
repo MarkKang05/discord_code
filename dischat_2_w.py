@@ -20,6 +20,7 @@ warning_msg = ['적당히 해라...휴먼...','봇도 힘들답니다..','10초 
 toggle = 0
 global count
 global start
+weather_count = 0
 count = 0
 start = 0
 
@@ -45,12 +46,31 @@ async def bt(games):
 async def on_ready():
     await bt(['민트 처리','암유발자 최고','민트 혐오'])
 
+
+
 @client.event
 async def on_message(message): 
+    if message.author.bot: #만약 메시지를 보낸사람이 봇일 경우에는
+        return None #동작하지 않고 무시합니다.
     message_contant=str(message.content).lower()
 
     global count
     global start
+    global weather_count
+    
+
+    if weather_count == 1:
+        w_list = []
+        w_list = wmodule.weather(message_contant)
+        try:
+            await message.channel.send(weather_send(w_list))
+        except:
+            w_list = wmodule.weather('서울시 강남구')
+            await message.channel.send(weather_send(w_list))
+            await message.channel.send('주소를 잘못 입력하셔서 서울시 강남구 기준으로 말씀드렸어요 :)')
+        del w_list
+        weather_count = 0
+
 
     if '!민트야' in message_contant[:4]:
         
@@ -60,16 +80,15 @@ async def on_message(message):
         
         elif '안녕' in message_contant:
             author = str(message.author.nick)
-
             if author == "None":
                 author = str(message.author)
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
 
+
         elif '날씨' in message_contant:
-            w_list = []
-            w_list = wmodule.weather('서울시 강남구')
-            await message.channel.send(weather_send(w_list))
+            weather_count = 1
+            await message.channel.send('>>> 지역을 입력해주세요(@@시 @@구):')
 
 
         elif '코로나' in message_contant:
@@ -80,22 +99,30 @@ async def on_message(message):
             cor = re.findall("\d+",cor)
             await message.channel.send('전일대비 {}명 늘었습니다'.format(cor[0]))
             #print(cor[0])
+
+
         elif '온도' in message_contant:
             cpu_temp = int(os.popen('cat /sys/class/thermal/thermal_zone0/temp').read())
             gpu_temp = str(os.popen('/opt/vc/bin/vcgencmd measure_temp').read())
             await message.channel.send('CPU:{}°C\nGPU:{}°C'.format(cpu_temp/1000,gpu_temp[5:9]))
 
+
         elif '엄준식' in message_contant:
             await message.channel.send("준식이 놀리지 마셈.ㅅㄱ")
             
+
+
         elif 'wol-desktop' in message_contant:
             os.system("wakeonlan BC:5F:F4:5C:85:B9")
+
+
 
         else:
             else_msg = ['저는 AI 봇이 아니니까 시리한테나 말거세요.','에?','?']
             random_value = random.randrange(0,len(else_msg))
             await message.channel.send('{}'.format(else_msg[random_value]))
         
+
     
     else:
         for i in bad: 
