@@ -13,6 +13,7 @@ import requests
 import re
 
 import wmodule
+import classcode
 
 #client = discord.Client()
 bad = ['민트','민초','민트초코','mint','mincho','mint cho'] 
@@ -24,8 +25,8 @@ weather_count = 0
 count = 0
 start = 0
 
-#token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
-token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
+token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
+#token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
 
 
 ##
@@ -84,6 +85,14 @@ async def on_message(message):
                 author = str(message.author)
                 author = author[:-5]
             await message.channel.send('안녕하세요. {}님'.format(author))
+
+
+        elif '과목' in message_contant:
+            await message.channel.send(classcode.all_class_code())
+
+
+        elif classcode.code_if(message_contant[5:]):
+            await message.channel.send(classcode.class_code(message_contant[5:]))
 
 
         elif '날씨' in message_contant:
