@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from pprint import pprint
 import requests
 import re
+from discord.utils import get
 
 import wmodule
 import classcode
@@ -74,15 +75,15 @@ async def on_message(message):
 
 
     if '!민트야' in message_contant[:4]:
+        if(str(message.author)=="암유발자#0112"):
+            um_list = ['@아잉봇 우리 개발자님이 나쁜 사람이랑 말하지 말랬지...?','누구....?','무시할게^^','']
+            um_random_value = random.randrange(0,len(um_list)-1)
+            await message.channel.send('{}'.format(um_list[um_random_value]))
+            await message.channel.send('{} 그래도 명령은 들어줄게'.format(str(message.author.mention())))
+        #print(author)
         
-        if str(message.author) == '04#0897':
-            #print(str(message.author))
-            um_list = ['내키지는 않지만..', '저희 개발자님이 이상한 사람이라 놀지 말랬는데..', '준식님이랑은 별로 이야기 하고 싶지 않지만 ', '더러운 독재자이긴 해도', '아빠가 너랑 놀지 말랜다아', '풉ㅋ']
-            random_value = random.randrange(0,len(um_list))
-            await message.channel.send(um_list[random_value] + '\n그래도 명령은 들어드릴게요 :)')
-            del um_list
-            del random_value
-            
+        
+        
         if '밥먹자' in message_contant:
             await message.channel.send('구구구구 마시쪙')
         
@@ -131,8 +132,7 @@ async def on_message(message):
         elif 'wol-desktop' in message_contant:
             os.system("wakeonlan BC:5F:F4:5C:85:B9")
 
-        elif '자폭' in message_contant:
-            await message.channel.send(file=discord.File('./pic/zapok.jpg'))
+
 
         else:
             else_msg = ['저는 AI 봇이 아니니까 시리한테나 말거세요.','에?','?']
@@ -192,7 +192,7 @@ async def on_message(message):
                                 
                                 await message.delete()
                                 await message.channel.send('```bash\n"ㅁㅌ"는 금지어입니다. 삭제합니다.\n"{}"님, 경고입니다.\n깨끗한 서버를 위해 더 노력하겠습니다!```'.format(author))   
-                
+                            
     
         
             
