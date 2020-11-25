@@ -105,8 +105,24 @@ async def on_message(message):
             await message.channel.send(classcode.class_code(message_contant[5:]))
 
         elif '시간표' in message_contant:
-            school_excel = maria_python.exe_sql(1)
-            print(school_excel)
+            wday_list = ['월요일', '화요일', '수요일', '목요일', '금요일']
+
+            wday = time.localtime().tm_wday
+            #print(message_contant[8:])
+            #school_excel = maria_python.exe_sql(int(message_contant[8:]))
+            school_excel = maria_python.exe_sql(wday+1)
+            send_msg = ['>>> ']
+            old_data = ''
+            for line in school_excel:
+                if old_data == line[0]:
+                    old_data = ''
+                    send_msg.append('{} | {:^10} | 코드: {:<25}\n'.format('               ', line[1], line[2]))
+                    continue
+                send_msg.append('{:>3}교시 | {:^10} | 코드: {:<25}\n'.format(line[0], line[1], line[2]))
+                old_data = line[0]
+
+            #print(''.join(send_msg))
+            await message.channel.send(''.join(send_msg))
 
 
 
