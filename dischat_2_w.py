@@ -14,6 +14,7 @@ import re
 
 import wmodule
 import classcode
+import maria_python
 
 #client = discord.Client()
 bad = ['민트','민초','민트초코','mint','mincho','mint cho'] 
@@ -25,8 +26,8 @@ weather_count = 0
 count = 0
 start = 0
 
-#token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
-token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
+token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
+#token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
 
 
 ##
@@ -84,9 +85,9 @@ async def on_message(message):
             del random_value
             
         if '밥먹자' in message_contant:
-            await message.channel.send(file=discord.File('./pic/koom.png'))
-            await message.channel.send('파아후 쿰척쿰척')
-            #await message.channel.send('구구구구 마시쪙')
+            #await message.channel.send(file=discord.File('./pic/koom.png'))
+            #await message.channel.send('파오후 쿰척쿰척')
+            await message.channel.send('구구구구 마시쪙')
         
         elif '안녕' in message_contant:
             author = str(message.author.nick)
@@ -102,6 +103,11 @@ async def on_message(message):
 
         elif classcode.code_if(message_contant[5:]):
             await message.channel.send(classcode.class_code(message_contant[5:]))
+
+        elif '시간표' in message_contant:
+            school_excel = maria_python.exe_sql(1)
+            print(school_excel)
+
 
 
         elif '날씨' in message_contant:

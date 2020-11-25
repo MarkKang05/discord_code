@@ -235,3 +235,399 @@ Error! 지역 검색 오류!
 Error! 지역 검색 오류!
 Error! 지역 검색 오류!
 Error! 지역 검색 오류!
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+Error! 지역 검색 오류!
+websocket connection is closing.
+websocket connection is closing.
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+websocket connection is closing.
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+websocket connection is closing.
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+websocket connection is closing.
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+websocket connection is closing.
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+Sending magic packet to 255.255.255.255:9 with BC:5F:F4:5C:85:B9
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+websocket connection is closing.
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 75, in on_message
+    channel = message.author.voice.channel
+AttributeError: 'NoneType' object has no attribute 'channel'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 75, in on_message
+    channel = message.author.voice.channel
+AttributeError: 'NoneType' object has no attribute 'channel'
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+python3: can't open file 'dischat_2_': [Errno 2] No such file or directory
+websocket connection is closing.
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "aingbot.py", line 78, in on_message
+    vc = await channel.connect()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/abc.py", line 1097, in connect
+    voice = VoiceClient(state=state, timeout=timeout, channel=self)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/voice_client.py", line 90, in __init__
+    raise RuntimeError("PyNaCl library needed in order to use voice")
+RuntimeError: PyNaCl library needed in order to use voice
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "aingbot.py", line 85, in on_message
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+websocket connection is closing.
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/client.py", line 312, in _run_event
+    await coro(*args, **kwargs)
+  File "dischat_2_w.py", line 185, in on_message
+    await message.delete()
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/message.py", line 760, in delete
+    await self._state.http.delete_message(self.channel.id, self.id)
+  File "/home/pi/.local/lib/python3.7/site-packages/discord/http.py", line 243, in request
+    raise NotFound(r, data)
+discord.errors.NotFound: 404 Not Found (error code: 10008): Unknown Message
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+Error! 지역 검색 오류!
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
+Error! 지역 검색 오류!
+Error! 지역 검색 오류!
+Traceback (most recent call last):
+  File "dischat_2_w.py", line 12, in <module>
+    import requests
+  File "/usr/lib/python3/dist-packages/requests/__init__.py", line 43, in <module>
+    import urllib3
+  File "/usr/lib/python3/dist-packages/urllib3/__init__.py", line 8, in <module>
+    from .connectionpool import (
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 29, in <module>
+    from .connection import (
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 38, in <module>
+    from .util.ssl_ import (
+  File "/usr/lib/python3/dist-packages/urllib3/util/__init__.py", line 22, in <module>
+    from .url import (
+  File "/usr/lib/python3/dist-packages/urllib3/util/url.py", line 14, in <module>
+    class Url(namedtuple('Url', url_attrs)):
+  File "/usr/lib/python3.7/collections/__init__.py", line 394, in namedtuple
+    s = f'def __new__(_cls, {arg_list}): return _tuple_new(_cls, ({arg_list}))'
+KeyboardInterrupt
+websocket connection is closing.
+websocket connection is closing.
+websocket connection is closing.
