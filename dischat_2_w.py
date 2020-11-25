@@ -84,7 +84,8 @@ async def on_message(message):
             del random_value
             
         if '밥먹자' in message_contant:
-            await message.channel.send('구구구구 마시쪙')
+            await message.channel.send(file=discord.File('./pic/koom.png'))
+            #await message.channel.send('구구구구 마시쪙')
         
         elif '안녕' in message_contant:
             author = str(message.author.nick)
