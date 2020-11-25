@@ -26,8 +26,8 @@ weather_count = 0
 count = 0
 start = 0
 
-token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
-#token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
+#token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
+token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
 
 
 ##
@@ -105,7 +105,7 @@ async def on_message(message):
             await message.channel.send(classcode.class_code(message_contant[5:]))
 
         elif '시간표' in message_contant:
-            wday_list = ['월요일', '화요일', '수요일', '목요일', '금요일']
+            #wday_list = ['월요일', '화요일', '수요일', '목요일', '금요일']
 
             wday = time.localtime().tm_wday
             #print(message_contant[8:])
@@ -116,7 +116,7 @@ async def on_message(message):
             for line in school_excel:
                 if old_data == line[0]:
                     old_data = ''
-                    send_msg.append('{} | {:^10} | 코드: {:<25}\n'.format('               ', line[1], line[2]))
+                    send_msg.append('{} | {:^10} | 코드: {:<25}\n'.format('             ', line[1], line[2]))
                     continue
                 send_msg.append('{:>3}교시 | {:^10} | 코드: {:<25}\n'.format(line[0], line[1], line[2]))
                 old_data = line[0]
