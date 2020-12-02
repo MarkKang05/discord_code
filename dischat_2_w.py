@@ -17,7 +17,7 @@ import classcode
 import maria_python
 
 #client = discord.Client()
-bad = ['민트','민초','민트초코','mint','mincho','mint cho'] 
+bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민투','ㅁㅌ'] 
 warning_msg = ['적당히 해라...휴먼...','봇도 힘들답니다..','10초 후 자폭합니다','미쳤습니까? 휴먼?','I will kill YOU','제 개발자한테 이를거에요','암유발자 최고']
 toggle = 0
 global count
@@ -106,10 +106,10 @@ async def on_message(message):
 
         elif '시간표' in message_contant:
             #wday_list = ['월요일', '화요일', '수요일', '목요일', '금요일']
-
+            
             wday = time.localtime().tm_wday
             #print(message_contant[8:])
-            #school_excel = maria_python.exe_sql(int(message_contant[8:]))
+            #school_excel = maria_python.exe_sql(int(message_contant[9:]))
             school_excel = maria_python.exe_sql(wday+1)
             send_msg = ['>>> ']
             old_data = ''
