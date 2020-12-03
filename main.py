@@ -11,10 +11,9 @@ from bs4 import BeautifulSoup
 from pprint import pprint
 import requests
 import re
+import sys
 
-import wmodule
-import classcode
-import maria_python
+from lib import wmodule, classcode, maria_python #import my module in lib(folder)
 
 #client = discord.Client()
 bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민투','ㅁㅌ'] 
@@ -26,11 +25,9 @@ weather_count = 0
 count = 0
 start = 0
 
-#token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
-token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
+token = "NzU2ODIwNzMzNDUxMTczOTc5.X2XaOw.WuMjiboEwZkM1WkGPx0uItPSRLo" #채금봇
+#token = "NzU2MzIwNDQ0MjgxMzg5MDU4.X2QITQ.P_5uJ70BeXrT6rc1d4Jhh_8Tl8M" #민트처리봇
 
-
-##
 client = commands.Bot(command_prefix= '~')
 
 
@@ -43,11 +40,10 @@ async def bt(games):
             await client.change_presence(status = discord.Status.online, activity = discord.Game(g))
             await asyncio.sleep(5)
 
-#@client.event
+
 @client.event
 async def on_ready():
     await bt(['민트 처리','암유발자 최고','민트 혐오'])
-
 
 
 @client.event
@@ -73,22 +69,21 @@ async def on_message(message):
         del w_list
         weather_count = 0
 
-
+    #!민트야 command detect section
     if '!민트야' in message_contant[:4]:
-        
+        #04#0897 denial
         if str(message.author) == '04#0897':
-            #print(str(message.author))
             um_list = ['내키지는 않지만..', '저희 개발자님이 이상한 사람이라 놀지 말랬는데..', '준식님이랑은 별로 이야기 하고 싶지 않지만 ', '더러운 독재자이긴 해도', '아빠가 너랑 놀지 말랜다아', '풉ㅋ']
             random_value = random.randrange(0,len(um_list))
             await message.channel.send(um_list[random_value] + '\n그래도 명령은 들어드릴게요 :)')
             del um_list
             del random_value
-            
+
+        #command section
         if '밥먹자' in message_contant:
-            #await message.channel.send(file=discord.File('./pic/koom.png'))
-            #await message.channel.send('파오후 쿰척쿰척')
             await message.channel.send('구구구구 마시쪙')
-        
+
+
         elif '안녕' in message_contant:
             author = str(message.author.nick)
             if author == "None":
@@ -104,13 +99,14 @@ async def on_message(message):
         elif classcode.code_if(message_contant[5:]):
             await message.channel.send(classcode.class_code(message_contant[5:]))
 
+
         elif '시간표' in message_contant:
-            #wday_list = ['월요일', '화요일', '수요일', '목요일', '금요일']
-            
-            wday = time.localtime().tm_wday
-            #print(message_contant[8:])
-            #school_excel = maria_python.exe_sql(int(message_contant[9:]))
-            school_excel = maria_python.exe_sql(wday+1)
+            num_in_msg = re.findall("\d", message_contant)
+            if not num_in_msg:
+                wday = time.localtime().tm_wday+1
+            else:
+                wday = int(num_in_msg[0])                 
+            school_excel = maria_python.exe_sql(wday)
             send_msg = ['>>> ']
             old_data = ''
             for line in school_excel:
@@ -121,9 +117,7 @@ async def on_message(message):
                 send_msg.append('{:>3}교시 | {:^10} | 코드: {:<25}\n'.format(line[0], line[1], line[2]))
                 old_data = line[0]
 
-            #print(''.join(send_msg))
             await message.channel.send(''.join(send_msg))
-
 
 
         elif '날씨' in message_contant:
@@ -138,7 +132,6 @@ async def on_message(message):
             del soup
             cor = re.findall("\d+",cor)
             await message.channel.send('전일대비 {}명 늘었습니다'.format(cor[0]))
-            #print(cor[0])
 
 
         elif '온도' in message_contant:
@@ -149,14 +142,15 @@ async def on_message(message):
 
         elif '엄준식' in message_contant:
             await message.channel.send("준식이 놀리지 마셈.ㅅㄱ")
-            
 
 
         elif 'wol-desktop' in message_contant:
             os.system("wakeonlan BC:5F:F4:5C:85:B9")
 
+
         elif '자폭' in message_contant:
             await message.channel.send(file=discord.File('./pic/zapok.jpg'))
+
 
         else:
             else_msg = ['저는 AI 봇이 아니니까 시리한테나 말거세요.','에?','?']
@@ -164,11 +158,10 @@ async def on_message(message):
             await message.channel.send('{}'.format(else_msg[random_value]))
         
 
-    
+    #Banned words detect
     else:
         for i in bad: 
             if i in message_contant: 
-
                 author = str(message.author.nick)
 
                 if author == "None":
@@ -177,16 +170,15 @@ async def on_message(message):
 
                 await message.delete()
                 await message.channel.send('```bash\n"ㅁㅌ"는 금지어입니다. 삭제합니다.\n"{}"님, 경고입니다.\n깨끗한 서버를 위해 더 노력하겠습니다!```'.format(author))
-    
+
+                #spamming check(Four Words in 8 Seconds)
                 if count == 0:
                     start = time.time()
                 count += 1
                 end = time.time()
                 if (end-start) >= 8.00:
                     count = 0
-
                 while (end-start) < 8.00:
-                    #print("dd")
                     if count >= 4:
                         random_value = random.randrange(0,len(warning_msg))
                         if random_value == 3:
@@ -196,32 +188,29 @@ async def on_message(message):
                     else:
                         break
 
-            else:
-                msg = message_contant
-                i=0
-                j=0
-                for i in range(0,len(msg)):
-                    if msg[i] == '민':
-                        ads = msg.find('민')
-                        for j in range(ads, len(msg)):
-                            if (msg[j] == '트'):
-                                #if (msg[j] == '초'):
+        #Complicated word detect
+        try:
+            msg = message_contant
+            i=0
+            j=0
+            for i in range(0,len(msg)):
+                if msg[i] == '민':
+                    ads = msg.find('민')
+                    for j in range(ads, len(msg)):
+                        if (msg[j] == '트'):
+                            #if (msg[j] == '초'):
 
 
-                                author = str(message.author.nick)
+                            author = str(message.author.nick)
 
-                                if author == "None":
-                                    author = str(message.author)
-                                    author = author[:-5]
-                                
-                                await message.delete()
-                                await message.channel.send('```bash\n"ㅁㅌ"는 금지어입니다. 삭제합니다.\n"{}"님, 경고입니다.\n깨끗한 서버를 위해 더 노력하겠습니다!```'.format(author))   
-                
-    
-        
-            
-            #await message.channel.send(count)
-            
+                            if author == "None":
+                                author = str(message.author)
+                                author = author[:-5]
+                            
+                            await message.delete()
+                            await message.channel.send('```bash\n"ㅁㅌ"는 금지어입니다. 삭제합니다.\n"{}"님, 경고입니다.\n깨끗한 서버를 위해 더 노력하겠습니다!```'.format(author)) 
+        except:
+            return
 
 def weather_send(w_list):
 

@@ -5,7 +5,7 @@ import random
 from discord.ext import commands
 import time
 import random
-import ffmpeg
+#import ffmpeg
 
 
 #client = discord.Client()
