@@ -16,7 +16,7 @@ import sys
 from lib import wmodule, classcode, maria_python #import my module in lib(folder)
 
 #client = discord.Client()
-bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민투','ㅁㅌ'] 
+bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민투','ㅁㅌ','뮌투','뮌초'] 
 warning_msg = ['적당히 해라...휴먼...','봇도 힘들답니다..','10초 후 자폭합니다','미쳤습니까? 휴먼?','I will kill YOU','제 개발자한테 이를거에요','암유발자 최고']
 toggle = 0
 global count
