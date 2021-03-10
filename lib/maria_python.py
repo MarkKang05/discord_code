@@ -7,14 +7,26 @@ def make_query(week):
      WHERE WEEK = '{}' \
      ORDER BY WEEK, period, B.code".format(week)
 
-def exe_sql(week):
-    conn = pymysql.connect(host="192.168.0.31", user='classroom', password='abc123', db='classroom', charset='utf8')
+def make_query_6(week):
+    return "SELECT period, A.name AS class_name, A.z_code FROM class_time_6 B \
+     INNER JOIN class A \
+     ON B.code = A.code \
+     WHERE WEEK = '{}' \
+     ORDER BY WEEK, period, B.code".format(week)
+
+
+
+def exe_sql(classroom, week):
+    conn = pymysql.connect(host="192.168.0.31", user='classroom', password='123456', db='classroom', charset='utf8')
 
     curs = conn.cursor()
   
     #week = input("input: ")
     #print(exe_sql(week))
-    curs.execute(make_query(week))
+    if classroom == 6:
+        curs.execute(make_query_6(week))
+    else:
+        curs.execute(make_query(week))
 
     rows = curs.fetchall()
     #print(rows)
