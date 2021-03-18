@@ -1,5 +1,4 @@
 ##ㅁㅌ처리봇 메인코드
-
 import asyncio
 import discord
 import random
