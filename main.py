@@ -18,13 +18,13 @@ from lib import wmodule, classcode, maria_python #import my module in lib(folder
 bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민투','ㅁㅌ','뮌투','뮌초', 'ㅁㅊ', '믠트','믠투',
         '묀초', '묀트', 'Min트', 'min트', '믠초', '미ㄴ초', '미ㄴ트', '민틔', '민튜', '민쵸', '민툐','민뜨', "민뚜",
         "민뜌", "밍트", "밍초", "밍뜨", "밍쵸","밍초","밍뚜","밍투","믱초","믱트",
-        "뮝트","뮝초","밍뜨","뮝뚜","뮝뜨","뮝뜌"] 
+        "뮝트","뮝초","밍뜨","뮝뚜","뮝뜨","뮝뜌", "섹"] 
 warning_msg = ['적당히 해라...휴먼...','봇도 힘들답니다..','10초 후 자폭합니다','미쳤습니까? 휴먼?','I will kill YOU','제 개발자한테 이를거에요','암유발자 최고']
-class_6 = ['배영은#8371', '김시현#7813', '구예림#2623']
+class_6 = ['배영은#8371', '김시현#5645', '구예림#2623']
 toggle = 0
 global count
 global start
-weather_count = 0
+weather_count = [0, ""]
 count = 0
 start = 0
 
@@ -51,26 +51,31 @@ async def on_ready():
 
 @client.event
 async def on_message(message): 
-    if message.author.bot: #만약 메시지를 보낸사람이 봇일 경우에는
-        return None #동작하지 않고 무시합니다.
+    if "#0956" in str(message.author):
+        pass
+    else:
+        if message.author.bot: #만약 메시지를 보낸사람이 봇일 경우에는
+            return None #동작하지 않고 무시합니다.
+    
     message_contant=str(message.content).lower()
 
     global count
     global start
     global weather_count
-    
 
-    if weather_count == 1:
-        w_list = []
-        w_list = wmodule.weather(message_contant)
-        try:
-            await message.channel.send(weather_send(w_list))
-        except:
-            w_list = wmodule.weather('서울시 강남구')
-            await message.channel.send(weather_send(w_list))
-            await message.channel.send('주소를 잘못 입력하셔서 서울시 강남구 기준으로 말씀드렸어요 :)')
-        del w_list
-        weather_count = 0
+    if weather_count[0] == 1:
+        if weather_count[1] == str(message.author):
+            weather_count[0] = 0
+            weather_count[1] = ""
+            w_list = []
+            w_list = wmodule.weather(message_contant)
+            try:
+                await message.channel.send(weather_send(w_list))
+            except:
+                w_list = wmodule.weather('서울시 강남구')
+                await message.channel.send(weather_send(w_list))
+                await message.channel.send('주소를 잘못 입력하셔서 서울시 강남구 기준으로 말씀드렸어요 :)')
+            del w_list
 
     #!민트야 command detect section
     if '!민트야' in message_contant[:4]:
@@ -131,7 +136,8 @@ async def on_message(message):
 
 
         elif '날씨' in message_contant:
-            weather_count = 1
+            weather_count[0] = 1
+            weather_count[1] = str(message.author)
             await message.channel.send('>>> 지역을 입력해주세요(@@시 @@구):')
 
 
