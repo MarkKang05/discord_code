@@ -1,0 +1,11 @@
+version: "3.4"
+
+services:
+  mintbot_bot:
+    image: mintbot
+    container_name: mintbot
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
