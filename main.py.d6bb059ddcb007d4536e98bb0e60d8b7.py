@@ -19,6 +19,7 @@ from lib import wmodule, classcode, maria_python #import my module in lib(folder
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
+class6_env = os.environ.get("CLASS6")
 token = os.environ.get("MINT_PSW")
 
 
@@ -27,7 +28,8 @@ bad = ['민트','민초','민트초코','mint','mincho','mint cho','뮌트','민
         "민뜌", "밍트", "밍초", "밍뜨", "밍쵸","밍초","밍뚜","밍투","믱초","믱트",
         "뮝트","뮝초","밍뜨","뮝뚜","뮝뜨","뮝뜌", "섹"] 
 warning_msg = ['적당히 해라...휴먼...','봇도 힘들답니다..','10초 후 자폭합니다','미쳤습니까? 휴먼?','I will kill YOU','제 개발자한테 이를거에요','암유발자 최고']
-class_6 = ['배영은#8371', '김시현#5645', '구예림#2623']
+
+class_6 = class6_env.split(",")
 
 toggle = 0
 global count
@@ -85,9 +87,6 @@ async def on_message(message):
 
     #!민트야 command detect section
     if '!민트야' in message_contant[:4]:
-        #18살
-        #0897denial
-        #if str(message.author) == '18살#0897':
         if '#0897' in str(message.author):
             um_list = ['내키지는 않지만..', '저희 개발자님이 이상한 사람이라 놀지 말랬는데..', '준식님이랑은 별로 이야기 하고 싶지 않지만 ', '더러운 독재자이긴 해도', '아빠가 너랑 놀지 말랜다아', '풉ㅋ']
             random_value = random.randrange(0,len(um_list))
