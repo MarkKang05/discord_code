@@ -12,7 +12,7 @@
 
 # 2. 📚 기술 스택
 * Python 3
-* MySQL
+* MariaDB
 * Docker
 
 
