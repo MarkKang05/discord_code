@@ -19,7 +19,8 @@ SELECT period, A.name AS class_name, A.z_code FROM class_time B
    ON B.code = A.code
 WHERE WEEK = '2'
 ORDER BY WEEK, period, B.code;
-``` from lib/maria_python.py
+```
+from lib/maria_python.py
 
 *서비스*
 * 수업 줌 코드 출력
