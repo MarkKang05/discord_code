@@ -66,7 +66,7 @@ from [lib/maria_python.py](https://github.com/MarkKang05/discord_code/blob/maste
 
 ---
 
-# 4. 🛠 배포 준비
+# 4. 🛠 배포
 
 * 저전력으로 24시간 운영을 해야하기 때문에 라즈베리파이를 서버로 사용.
 * 관리의 편의를 위해 컨테이너화 하여 도커를 이용하여 관리. 
