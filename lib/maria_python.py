@@ -17,7 +17,7 @@ def make_query_6(week):
 
 
 def exe_sql(classroom, week):
-    conn = pymysql.connect(host="192.168.0.31", user='classroom', password='123456', db='classroom', charset='utf8')
+    conn = pymysql.connect(host="192.168.1.32", user='root', password='robotmna12$', db='classroom', charset='utf8')
 
     curs = conn.cursor()
   

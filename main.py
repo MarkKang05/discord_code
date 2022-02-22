@@ -15,9 +15,9 @@ import re
 import sys
 import datetime
 from lib import wmodule, classcode, maria_python #import my module in lib(folder)
-
-
+import math
 dotenv_path = join(dirname(__file__), '.env')
+
 load_dotenv(dotenv_path)
 class6_env = os.environ.get("CLASS6")
 token = os.environ.get("MINT_PSW")
@@ -87,6 +87,8 @@ async def on_message(message):
 
     #!민트야 command detect section
     if '!민트야' in message_contant[:4]:
+        if '#2432' in str(message.author):
+            return None;
         if '#0897' in str(message.author):
             um_list = ['내키지는 않지만..', '저희 개발자님이 이상한 사람이라 놀지 말랬는데..', '준식님이랑은 별로 이야기 하고 싶지 않지만 ', '더러운 독재자이긴 해도', '아빠가 너랑 놀지 말랜다아', '풉ㅋ']
             random_value = random.randrange(0,len(um_list))
